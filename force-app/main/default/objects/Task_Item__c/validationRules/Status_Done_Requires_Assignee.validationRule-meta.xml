@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Done_Requires_Assignee</fullName>
+    <active>true</active>
+    <description>Prevents marking a task as Done without an assigned owner</description>
+    <errorConditionFormula>AND(ISPICKVAL(Status__c, &quot;Done&quot;),ISBLANK(Assigned_To__c))</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>You cannot mark this task as Done without assigning it to someone.</errorMessage>
+</ValidationRule>
